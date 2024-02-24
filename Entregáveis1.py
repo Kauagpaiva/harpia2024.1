@@ -78,14 +78,16 @@ class Drones:
         return print('\nDrone não encontrado')
 
     def tabela(self):
-        pass
+        if len(self.drones) == 0:
+            return print("\nNão há drones")
+        return print("Tabela:"), [print("\nNome: {}\nAno de fabricação: {}\nQuantidade de motores: {}\nQuantidade de câmeras: {}\nPeso(em kg): {}".format(drone.nome, drone.ano, drone.motores, drone.cameras, drone.peso)) for drone in self.drones]
 
     def rank(self):
         if len(self.drones) == 0:
-            return print("Não há drones")
+            return print("\nNão há drones")
         
         if len(self.drones) == 1:
-            return print("Rank"), print("1 - {} ({})".format(self.drones[0].nome, self.drones[0].ano))
+            return print("\nRank"), print("1 - {} ({})".format(self.drones[0].nome, self.drones[0].ano))
         
         copia = self.drones.copy() #cria uma variavel com todos os drones para eu poder mexer, sem afetar a lista original
         resultado = list() # o resultado será uma lsita com os drones, em ordem do mais novo para o mais velho
@@ -97,10 +99,15 @@ class Drones:
                     maisNovo = drone
             copia.remove(maisNovo)
             resultado.append(maisNovo)
-        return print("Rank:"),[print("{} - {} ({})".format(indice+1, resultado[indice], resultado[indice].ano)) for indice in range(len(resultado))]
+        return print("\nRank:"),[print("{} - {} ({})".format(indice+1, resultado[indice], resultado[indice].ano)) for indice in range(len(resultado))]
+    
+    def deletar(self, other):
+        if other not in self.drones:
+            return print("Drone não encontrado")
+        self.drones.remove(other)
+        return print("{} deletado com sucesso!".format(other))
 
-
-### Testes ###
+### Testes Drones ###
     
 harpia001 = Drone("harpia001", 2017, 4, 1, 3)
 harpia = Drone("harpia", 2020, 4, 1, 1)
@@ -113,12 +120,16 @@ drones.add(harpia)
 drones.add(icarus)
 drones.add(pegasus)
 
-# print(drones)
+print(drones)
 
-# drones.exibir("harpia")
-# drones.exibir("pegasus")
-# drones.exibir("kaua")
+drones.exibir("harpia")
+drones.exibir("pegasus")
+drones.exibir("kaua")
 
-# drones.rank()
+drones.rank()
 
+drones.tabela()
+
+drones.deletar(harpia)
+print(drones)
     
