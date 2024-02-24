@@ -45,14 +45,80 @@ def somaPrimos():
 #Deve conter outro método de livre escolha
 
 class Drone:
-    def __init__(self, motores, cameras, ano, nome, peso)
+    def __init__(self, nome, ano, motores, cameras, peso):
         self.motores = motores
         self.cameras = cameras
         self.ano = ano
         self.nome = nome
-        self. peso = peso
+        self.peso = peso
 
+    def __repr__(self):
+        return self.nome
     
+class Drones:
+    def __init__(self):
+        self.drones = list()
 
+    def __repr__(self):
+        result = str(self.drones)
+        return result
+
+    def add(self, other):
+        self.drones.append(other)
+
+    def exibir(self, nome):
+        drone = None
+        for item in self.drones:
+            if item.nome == nome:
+                drone = item
+        if drone != None:
+            return print(
+                "\nNome: {}\nAno de fabricação: {}\nQuantidade de motores: {}\nQuantidade de câmeras: {}\nPeso(em kg): {}".format(drone.nome, drone.ano, drone.motores, drone.cameras, drone.peso)
+            )
+        return print('\nDrone não encontrado')
+
+    def tabela(self):
+        pass
+
+    def rank(self):
+        if len(self.drones) == 0:
+            return print("Não há drones")
+        
+        if len(self.drones) == 1:
+            return print("Rank"), print("1 - {} ({})".format(self.drones[0].nome, self.drones[0].ano))
+        
+        copia = self.drones.copy() #cria uma variavel com todos os drones para eu poder mexer, sem afetar a lista original
+        resultado = list() # o resultado será uma lsita com os drones, em ordem do mais novo para o mais velho
+        
+        for _ in range(len(copia)):
+            maisNovo = copia[0] # pega o primeiro drone da lista e assume que ele é o mais novo
+            for drone in copia[1:]: # percorre a lista apartir do segundo drone e encontra o drone mais novo dentro da lista, remove ele da copia e adiciona no resultado
+                if drone.ano > maisNovo.ano: 
+                    maisNovo = drone
+            copia.remove(maisNovo)
+            resultado.append(maisNovo)
+        return print("Rank:"),[print("{} - {} ({})".format(indice+1, resultado[indice], resultado[indice].ano)) for indice in range(len(resultado))]
+
+
+### Testes ###
+    
+harpia001 = Drone("harpia001", 2017, 4, 1, 3)
+harpia = Drone("harpia", 2020, 4, 1, 1)
+icarus = Drone("icarus", 2021, 3, 2, 2)
+pegasus = Drone("pegasus", 2023, 5, 3, 1)
+
+drones = Drones()
+drones.add(harpia001)
+drones.add(harpia)
+drones.add(icarus)
+drones.add(pegasus)
+
+# print(drones)
+
+# drones.exibir("harpia")
+# drones.exibir("pegasus")
+# drones.exibir("kaua")
+
+# drones.rank()
 
     
