@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  harpia2024:
+    container_name: "harpia2024"
+    image: ad92434640e7
+    stdin_open: true
+    tty: true
+    working_dir: /dir1
+    volumes:
+      - ./dir2:/dir1/dir2
+      - ./dir3:/dir1/dir3
