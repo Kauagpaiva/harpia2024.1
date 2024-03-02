@@ -9,10 +9,10 @@ class Assinante(Node):
         super().__init__('Assinante')
         self.get_logger().info('Escutando topico')
         self._publicador = self.create_publisher(String, "topico2", 10)
-        self._assinatura = self.create_subscription(Twist, "topico1", self.callback, 10)
+        self._assinatura = self.create_subscription(Twist, "topico1", self.criar_modulo, 10)
        
     
-    def callback(self, vel):
+    def criar_modulo(self, vel):
         modulo_linear = (vel.linear.x**2 + vel.linear.y**2 + vel.linear.z**2)**(1/2)
         modulo_angular = (vel.angular.x**2 + vel.angular.y**2 + vel.angular.z**2)**(1/2)
 
