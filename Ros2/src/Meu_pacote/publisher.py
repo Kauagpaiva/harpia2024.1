@@ -2,6 +2,7 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
 from geometry_msgs.msg import Twist
+import random
 
 class Publicador(Node):
     def __init__(self):
@@ -13,13 +14,13 @@ class Publicador(Node):
 
     def callback(self):
         vel = Twist()
-        vel.linear.x = 0.0
-        vel.linear.y = 0.0
-        vel.linear.z = 0.0
-
-        vel.angular.x = 0.0
-        vel.angular.y = 0.0
-        vel.angular.z = 0.0
+        vel.linear.x = random.uniform(-1.0,1.0)
+        vel.linear.y = random.uniform(-1.0,1.0)
+        vel.linear.z = random.uniform(-1.0,1.0)
+        
+        vel.angular.x = random.uniform(-1.0,1.0)
+        vel.angular.y = random.uniform(-1.0,1.0)
+        vel.angular.z = random.uniform(-1.0,1.0)
 
         self._publicador.publish(vel)
 
