@@ -1,0 +1,6 @@
+parametros:
+  ros__parameters:
+    raio_planeta: 2
+    raio_satelite: 1
+    nome_estrela: "Sol"
+    nome_planeta: 'Terra'

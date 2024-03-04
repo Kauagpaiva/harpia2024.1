@@ -1,0 +1,6 @@
+[console_scripts]
+estrela = meu_pacote.estrela:main
+parametros = meu_pacote.parametros:main
+planeta = meu_pacote.planeta:main
+satelite = meu_pacote.satelite:main
+

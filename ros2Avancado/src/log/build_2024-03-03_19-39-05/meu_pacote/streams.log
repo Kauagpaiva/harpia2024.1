@@ -1,0 +1,28 @@
+[1.412s] Invoking command in '/dir1/ros2Avancado/src/build/meu_pacote': PYTHONPATH=/dir1/ros2Avancado/src/build/meu_pacote/prefix_override:/dir1/ros2Avancado/src/install/meu_pacote/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /dir1/ros2Avancado/src/build/meu_pacote/build --no-deps install_data
+[1.961s] running develop
+[1.964s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[1.964s]   warnings.warn(
+[1.967s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[1.967s]   warnings.warn(
+[2.224s] running egg_info
+[2.224s] creating meu_pacote.egg-info
+[2.225s] writing meu_pacote.egg-info/PKG-INFO
+[2.231s] writing dependency_links to meu_pacote.egg-info/dependency_links.txt
+[2.232s] writing entry points to meu_pacote.egg-info/entry_points.txt
+[2.233s] writing requirements to meu_pacote.egg-info/requires.txt
+[2.234s] writing top-level names to meu_pacote.egg-info/top_level.txt
+[2.236s] writing manifest file 'meu_pacote.egg-info/SOURCES.txt'
+[2.244s] reading manifest file 'meu_pacote.egg-info/SOURCES.txt'
+[2.247s] writing manifest file 'meu_pacote.egg-info/SOURCES.txt'
+[2.254s] running build_ext
+[2.255s] Creating /dir1/ros2Avancado/src/install/meu_pacote/lib/python3.10/site-packages/meu-pacote.egg-link (link to .)
+[2.258s] Installing frame_fixo script to /dir1/ros2Avancado/src/install/meu_pacote/lib/meu_pacote
+[2.262s] 
+[2.262s] Installed /dir1/ros2Avancado/src/build/meu_pacote
+[2.262s] running install_data
+[2.262s] creating /dir1/ros2Avancado/src/install/meu_pacote/share/ament_index
+[2.264s] creating /dir1/ros2Avancado/src/install/meu_pacote/share/ament_index/resource_index
+[2.267s] creating /dir1/ros2Avancado/src/install/meu_pacote/share/ament_index/resource_index/packages
+[2.267s] copying resource/meu_pacote -> /dir1/ros2Avancado/src/install/meu_pacote/share/ament_index/resource_index/packages
+[2.268s] copying package.xml -> /dir1/ros2Avancado/src/install/meu_pacote/share/meu_pacote
+[2.353s] Invoked command in '/dir1/ros2Avancado/src/build/meu_pacote' returned '0': PYTHONPATH=/dir1/ros2Avancado/src/build/meu_pacote/prefix_override:/dir1/ros2Avancado/src/install/meu_pacote/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /dir1/ros2Avancado/src/build/meu_pacote/build --no-deps install_data
